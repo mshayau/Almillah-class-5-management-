@@ -1,0 +1,433 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f7f3ee;
+    color: #1b110b;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  html.dark body {
+    background-color: #120c08;
+    color: #f5eee8;
+  }
+}
+
+/* Islamic Academy Dark Theme Rules */
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark .bg-white {
+  background-color: #1e130c !important;
+}
+
+html.dark .bg-\[\#f8f5ee\],
+html.dark .bg-\[\#f7f3ee\] {
+  background-color: #120c08 !important;
+}
+
+html.dark .bg-\[\#faf7f2\],
+html.dark .bg-\[\#faf7f3\],
+html.dark .bg-\[\#fbf4ee\],
+html.dark .bg-\[\#f5efe6\],
+html.dark .bg-\[\#fbf6ee\],
+html.dark .bg-\[\#fdfbf8\],
+html.dark .bg-\[\#fbf7f3\],
+html.dark .bg-\[\#f7eee5\],
+html.dark .bg-\[\#fdf9f4\] {
+  background-color: #271910 !important;
+}
+
+html.dark .border-\[\#e5dad0\],
+html.dark .border-\[\#ebd8c8\],
+html.dark .border-\[\#eedecf\],
+html.dark .border-\[\#ede5dc\],
+html.dark .border-\[\#d9cbbf\],
+html.dark .border-\[\#e8d7c8\],
+html.dark .border-\[\#ded0c3\],
+html.dark .border-\[\#d9c4b3\] {
+  border-color: #422a1b !important;
+}
+
+html.dark .text-\[\#1b110b\],
+html.dark .text-\[\#2b170e\] {
+  color: #faedd9 !important;
+}
+
+html.dark .text-\[\#6e5648\],
+html.dark .text-\[\#7c695d\],
+html.dark .text-\[\#6d5b50\],
+html.dark .text-\[\#8c7464\],
+html.dark .text-\[\#5c473a\],
+html.dark .text-\[\#70584a\] {
+  color: #bfaea2 !important;
+}
+
+html.dark .text-\[\#854d2b\],
+html.dark .text-\[\#5c351f\] {
+  color: #df9b52 !important;
+}
+
+html.dark input:not([type="checkbox"]):not([type="radio"]),
+html.dark select,
+html.dark textarea {
+  background-color: #261810;
+  color: #faedd9;
+  border-color: #4d2f1d;
+}
+
+html.dark input:not([type="checkbox"]):not([type="radio"]):focus,
+html.dark select:focus,
+html.dark textarea:focus {
+  background-color: #2e1d13;
+  border-color: #df9b52;
+}
+
+html.dark table thead {
+  background-color: #291a11 !important;
+  color: #faedd9 !important;
+}
+
+html.dark table tbody tr:hover {
+  background-color: #2b1c12 !important;
+}
+
+html.dark hr {
+  border-color: #3b2518 !important;
+}
+
+.font-arabic {
+  font-family: 'Scheherazade New', 'Amiri', serif;
+}
+
+.font-calligraphy {
+  font-family: 'Amiri', serif;
+}
+
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .page-break {
+    page-break-after: always;
+  }
+}
+
+/* =========================================================
+   Luxury Digital Badge & Golden Glow Animations
+   ========================================================= */
+
+@keyframes badge-golden-breathe {
+  0%, 100% {
+    box-shadow: 0 0 14px rgba(223, 155, 82, 0.35), 0 0 28px rgba(200, 134, 66, 0.2), inset 0 0 6px rgba(255, 255, 255, 0.4);
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(223, 155, 82, 0.7), 0 0 52px rgba(247, 203, 139, 0.45), inset 0 0 12px rgba(255, 255, 255, 0.7);
+    transform: scale(1.028);
+    filter: brightness(1.05);
+  }
+}
+
+@keyframes badge-golden-login-pulse {
+  0%, 100% {
+    box-shadow: 0 0 22px rgba(223, 155, 82, 0.55), 0 0 42px rgba(223, 155, 82, 0.35);
+    transform: scale(1.015);
+    filter: brightness(1.04);
+  }
+  50% {
+    box-shadow: 0 0 44px rgba(223, 155, 82, 0.95), 0 0 76px rgba(247, 203, 139, 0.7), inset 0 0 18px rgba(255, 255, 255, 0.9);
+    transform: scale(1.06);
+    filter: brightness(1.14);
+  }
+}
+
+@keyframes badge-aura-pulse {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 0.78;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes badge-light-sweep {
+  0% {
+    transform: translateX(-160%) rotate(25deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.75;
+  }
+  38% {
+    transform: translateX(180%) rotate(25deg);
+    opacity: 0.85;
+  }
+  48%, 100% {
+    transform: translateX(180%) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+.animate-badge-glow {
+  animation: badge-golden-breathe 4.5s ease-in-out infinite;
+}
+
+.animate-badge-glow-submitting {
+  animation: badge-golden-login-pulse 1.6s ease-in-out infinite;
+}
+
+.animate-badge-aura {
+  animation: badge-aura-pulse 4.5s ease-in-out infinite;
+}
+
+.animate-badge-aura-submitting {
+  animation: badge-aura-pulse 1.6s ease-in-out infinite;
+}
+
+.animate-badge-sweep {
+  animation: badge-light-sweep 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-badge-sweep-submitting {
+  animation: badge-light-sweep 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* =========================================================
+   Premium Luxury Brand Identity Animations
+   ========================================================= */
+
+@keyframes luxury-float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-luxury-float {
+  animation: luxury-float-gentle 4.8s ease-in-out infinite;
+}
+
+/* =========================================================
+   Al-Millah Dark Gold & Light Ivory Neumorphic / Embossed System
+   ========================================================= */
+
+/* Dark Mode Neumorphic Panel (Embossed convex elevation with warm specular rims) */
+.neumorphic-card-dark {
+  background: linear-gradient(155deg, #1d120a 0%, #150d07 50%, #100905 100%);
+  box-shadow: 
+    18px 20px 45px rgba(0, 0, 0, 0.82),
+    -10px -10px 28px rgba(223, 155, 82, 0.07),
+    inset 1px 1px 2px rgba(250, 237, 217, 0.16),
+    inset -1px -1px 3px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(223, 155, 82, 0.32);
+}
+
+/* Light Mode Neumorphic Panel (Warm ivory convex elevation) */
+.neumorphic-card-light {
+  background: linear-gradient(155deg, #ffffff 0%, #fbf6ef 55%, #f4ede3 100%);
+  box-shadow: 
+    16px 18px 36px rgba(186, 162, 144, 0.35),
+    -12px -12px 30px rgba(255, 255, 255, 0.95),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.9),
+    inset -1px -1px 2px rgba(180, 155, 135, 0.15);
+  border: 1px solid rgba(200, 150, 100, 0.28);
+}
+
+/* Dark Mode Debossed / Inset Input */
+.neumorphic-input-dark {
+  background: #140c07;
+  box-shadow: 
+    inset 3px 3px 7px rgba(0, 0, 0, 0.75),
+    inset -2px -2px 5px rgba(223, 155, 82, 0.08),
+    0 1px 2px rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(223, 155, 82, 0.24);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neumorphic-input-dark:focus {
+  background: #180e08;
+  border-color: #df9b52;
+  box-shadow: 
+    inset 2px 2px 5px rgba(0, 0, 0, 0.65),
+    inset -1px -1px 4px rgba(223, 155, 82, 0.22),
+    0 0 20px rgba(223, 155, 82, 0.32),
+    0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+/* Light Mode Debossed / Inset Input */
+.neumorphic-input-light {
+  background: #f7f2ea;
+  box-shadow: 
+    inset 3px 3px 6px rgba(175, 150, 130, 0.28),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.95),
+    0 1px 2px rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(133, 77, 43, 0.22);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neumorphic-input-light:focus {
+  background: #ffffff;
+  border-color: #c88642;
+  box-shadow: 
+    inset 2px 2px 4px rgba(175, 150, 130, 0.2),
+    inset -1px -1px 3px rgba(255, 255, 255, 0.8),
+    0 0 16px rgba(200, 134, 66, 0.32);
+}
+
+/* Dark Mode Embossed Button (Raised convex surface) */
+.neumorphic-btn-dark {
+  background: linear-gradient(155deg, #2a180f, #1b0f09);
+  box-shadow: 
+    6px 6px 16px rgba(0, 0, 0, 0.72),
+    -4px -4px 12px rgba(223, 155, 82, 0.12),
+    inset 1px 1px 1.5px rgba(250, 237, 217, 0.22);
+  border: 1px solid rgba(223, 155, 82, 0.45);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neumorphic-btn-dark:hover {
+  background: linear-gradient(155deg, #341e13, #22130c);
+  box-shadow: 
+    8px 8px 22px rgba(0, 0, 0, 0.82),
+    -5px -5px 16px rgba(223, 155, 82, 0.2),
+    inset 1px 1px 2px rgba(250, 237, 217, 0.3);
+  border-color: rgba(223, 155, 82, 0.7);
+  transform: translateY(-1px);
+}
+
+.neumorphic-btn-dark:active {
+  background: linear-gradient(155deg, #170d08, #22140c);
+  box-shadow: 
+    inset 4px 4px 8px rgba(0, 0, 0, 0.85),
+    inset -2px -2px 6px rgba(223, 155, 82, 0.16),
+    0 1px 2px rgba(0, 0, 0, 0.5);
+  transform: translateY(1.5px);
+  border-color: rgba(223, 155, 82, 0.4);
+}
+
+/* Primary Gold Action Button (Embossed Luxury Gold with soft 3D lighting) */
+.neumorphic-btn-gold {
+  background: linear-gradient(155deg, #e8a558 0%, #d89144 48%, #b87127 100%);
+  box-shadow: 
+    7px 8px 20px rgba(0, 0, 0, 0.65),
+    -4px -4px 12px rgba(250, 237, 217, 0.24),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.6),
+    inset -1px -1px 2.5px rgba(110, 50, 10, 0.45);
+  border: 1px solid rgba(255, 240, 220, 0.55);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neumorphic-btn-gold:hover {
+  background: linear-gradient(155deg, #f0b26b 0%, #e29b4e 50%, #c47c2f 100%);
+  box-shadow: 
+    9px 10px 26px rgba(0, 0, 0, 0.72),
+    -5px -5px 15px rgba(250, 237, 217, 0.35),
+    inset 1px 1px 3px rgba(255, 255, 255, 0.72),
+    inset -1px -1px 2px rgba(110, 50, 10, 0.35);
+  transform: translateY(-1.5px);
+}
+
+.neumorphic-btn-gold:active {
+  background: linear-gradient(155deg, #b06922 0%, #cb843b 100%);
+  box-shadow: 
+    inset 4px 4px 9px rgba(80, 35, 8, 0.7),
+    inset -2px -2px 6px rgba(255, 255, 255, 0.3),
+    0 1px 3px rgba(0, 0, 0, 0.5);
+  transform: translateY(1.5px);
+}
+
+/* Light Mode Embossed Button */
+.neumorphic-btn-light {
+  background: linear-gradient(155deg, #f7efe6, #eae0d5);
+  box-shadow: 
+    5px 5px 14px rgba(180, 155, 135, 0.42),
+    -4px -4px 10px rgba(255, 255, 255, 0.95),
+    inset 1px 1px 1.5px rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(133, 77, 43, 0.25);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neumorphic-btn-light:hover {
+  background: linear-gradient(155deg, #fbf4ed, #eee5db);
+  box-shadow: 
+    7px 7px 18px rgba(180, 155, 135, 0.48),
+    -5px -5px 14px rgba(255, 255, 255, 1),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.95);
+  transform: translateY(-1px);
+}
+
+.neumorphic-btn-light:active {
+  background: linear-gradient(155deg, #e4d8cb, #eee4da);
+  box-shadow: 
+    inset 3px 3px 6px rgba(150, 125, 105, 0.45),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.8),
+    0 1px 2px rgba(0, 0, 0, 0.1);
+  transform: translateY(1.5px);
+}
+
+/* Seal Embossed Ring Effect */
+.seal-embossed-ring {
+  box-shadow: 
+    10px 12px 28px rgba(0, 0, 0, 0.8),
+    -7px -7px 22px rgba(223, 155, 82, 0.18),
+    inset 2px 2px 4px rgba(255, 240, 220, 0.38),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.65);
+}
+
+.seal-embossed-ring-light {
+  box-shadow: 
+    8px 10px 22px rgba(180, 155, 135, 0.45),
+    -6px -6px 18px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 3px rgba(255, 255, 255, 0.95),
+    inset -2px -2px 3px rgba(150, 120, 95, 0.25);
+}
+
+/* Embossed Gold Title Lighting */
+.embossed-text-gold {
+  background: linear-gradient(180deg, #ffffff 0%, #fce2be 45%, #df9b52 80%, #b8732a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.75));
+}
+
+.embossed-text-gold-light {
+  background: linear-gradient(180deg, #2a170d 0%, #5c351f 50%, #854d2b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.85));
+}
+
+/* Subtle Shimmer Ray */
+@keyframes shimmer-sweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.animate-shimmer-sweep {
+  animation: shimmer-sweep 2.4s ease-in-out infinite;
+}
+
+
+

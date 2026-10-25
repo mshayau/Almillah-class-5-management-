@@ -1,0 +1,6 @@
+{
+  "name": "Al-Millah Class Management System",
+  "description": "Class management system for Class Five Islamic school students, tracking Qur’an memorization, attendance, and daily activities.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
